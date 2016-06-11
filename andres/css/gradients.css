@@ -1,0 +1,93 @@
+.leon {
+  position: relative;
+  width: 800px;
+  height: 533px; }
+  .leon:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 800px;
+    height: 533px;
+    z-index: 10;
+    background-image: -webkit-linear-gradient(315deg, tomato, magenta);
+    background-image: linear-gradient(135deg, tomato, magenta);
+    mix-blend-mode: overlay;
+    -webkit-filter: opacity(0.2);
+            filter: opacity(0.2); }
+  .leon img {
+    display: block;
+    position: absolute;
+    max-width: none;
+    max-height: none;
+    width: 800px; }
+    .leon img:last-of-type {
+      -webkit-filter: contrast(0.8) brightness(0.8) sepia(0.2);
+              filter: contrast(0.8) brightness(0.8) sepia(0.2); }
+    .leon img:first-of-type {
+      z-index: 1;
+      right: 10px;
+      top: -200px;
+      -webkit-clip-path: polygon(20% 30%, 90% 35%, 100% 90%, 10% 85%);
+              clip-path: polygon(20% 30%, 90% 35%, 100% 90%, 10% 85%);
+      -webkit-filter: brightness(1) contrast(3) invert(1);
+              filter: brightness(1) contrast(3) invert(1);
+      mix-blend-mode: screen;
+      width: 500px; }
+
+.blendmode img:first-of-type {
+  /* Darken modes */
+  /* Lightning modes */
+  /* Contrast modes */
+  /* Comparative modes */
+  /* Composite modes */ }
+
+body {
+  background-image: -webkit-linear-gradient(tomato, pink), -webkit-linear-gradient(#ddd 18px, transparent 18px), -webkit-linear-gradient(left, #ddd 18px, transparent 18px);
+  background-image: linear-gradient(tomato, pink), linear-gradient(#ddd 18px, transparent 18px), linear-gradient(90deg, #ddd 18px, transparent 18px);
+  background-position: 0 0, 0 -2px, -2px 0;
+  background-color: #999;
+  background-size: 100% 100%, 20px 20px, 20px 20px;
+  background-blend-mode: color, normal, normal;
+  /*
+
+background-image:
+  background-image:
+    linear-gradient(135deg, tomato, magenta),
+    linear-gradient(#ddd 18px, transparent 18px),
+    linear-gradient(90deg, #ddd 18px, transparent 18px);
+  background-position: 0 -2px, -2px 0;
+  background-color: #ccc;
+  background-size: 100% 100%, 20px 20px, 20px 20px;
+  background-blend-mode: color, normal, normal;
+*/ }
+
+/**/
+@-webkit-keyframes move {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    -webkit-filter: blur(0);
+            filter: blur(0); }
+  to {
+    -webkit-transform: translateX(250px);
+            transform: translateX(250px);
+    -webkit-filter: blur(15px);
+            filter: blur(15px);
+    background: blue; } }
+@keyframes move {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    -webkit-filter: blur(0);
+            filter: blur(0); }
+  to {
+    -webkit-transform: translateX(250px);
+            transform: translateX(250px);
+    -webkit-filter: blur(15px);
+            filter: blur(15px);
+    background: blue; } }
+
+.animation .ball {
+  -webkit-animation: move .5s ease infinite alternate;
+          animation: move .5s ease infinite alternate; }

@@ -1,0 +1,45 @@
+@import "base";
+
+.leon{
+  overflow: hidden;
+  position: relative;
+  width: 800px;
+  height: 533px;
+  &:hover{
+    img:first-of-type{
+      transform: rotate(-15deg);
+    }
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 800px;
+    height: 533px;
+    z-index: 10;
+    background-image: linear-gradient(135deg, tomato, orange);
+    mix-blend-mode: overlay;
+    filter: opacity(.3);
+  }
+  img{
+    display: block;
+    position: absolute;
+    max-width: none;
+    max-height: none;
+    width: 800px;
+    &:last-of-type{
+      filter: contrast(.8) brightness(.8) sepia(.2);
+    }
+    &:first-of-type{
+      transition: .3s ease all;
+      z-index: 1;
+      right:0px;
+      top: 30px;
+      clip-path: polygon(5% 0%, 100% 0%, 100% 65%, 0% 67%);
+      filter: brightness(1) contrast(22) invert(1);
+      mix-blend-mode: screen;
+      width:520px;
+    }
+  }
+}
