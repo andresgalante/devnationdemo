@@ -1,4 +1,4 @@
-# QCon SP 2016
+# Devnation  2016
 
 ``npm install``
 
