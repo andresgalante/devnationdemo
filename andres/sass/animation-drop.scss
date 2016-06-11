@@ -1,28 +1,55 @@
 @import "base";
 
-body{
 
-  background-image:
-  linear-gradient( 45deg, yellow, green),
-    linear-gradient(#ddd 18px, transparent 18px),
-    linear-gradient(90deg, #ddd 18px, transparent 18px);
-
-  background-size: 100% 100%, 20px 20px, 20px 20px;
-  background-color: #999;
-  background-blend-mode: color, normal, normal;
-/* EXEMPLO DE PATTERN ==========
-*/
-}
-
-@keyframes move{
+@keyframes drop{
   from{
-
+    transform: scale3d(2,2,1);
   }
   to{
-    transform: translateX(300px);
+    transform: scale3d(1,1,1);;
   }
 }
 
-.animation .ball{
-  animation: move .3s ease infinite alternate;
+@keyframes mask{
+  from{
+    filter: opacity(0);
+  }
+  to{
+    filter: opacity(1);
+  }
+}
+
+.node{
+  display: inline-block;
+  position: relative;
+  width: 33%;
+  animation: drop 4s ease infinite alternate;
+//  transition: all .2s ease;
+}
+
+// .node:hover{
+//  transform: scale3d(2,2,1);
+//  z-index: 1;
+// }
+
+.mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: color;
+  animation: mask 4s ease infinite alternate;
+}
+
+.node-orange .mask{
+  background: orangered;
+}
+
+.node-blue .mask{
+  background: darkblue;
+}
+
+.node-white img{
+  filter: grayscale(1) contrast(.6) brightness(2);
 }

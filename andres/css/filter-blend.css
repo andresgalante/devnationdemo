@@ -3,7 +3,8 @@ html {
 
 body {
   margin: 20px;
-  height: calc(100vh - 40px); }
+  height: calc(100vh - 40px);
+  overflow: hidden; }
 
 img {
   max-width: 100%;
@@ -33,10 +34,10 @@ img {
   display: inline-block;
 }
 */
-.container {
+.node {
   display: inline-block;
   position: relative;
-  width: 200px; }
+  width: 33%; }
 
 .mask {
   position: absolute;
@@ -46,13 +47,13 @@ img {
   height: 100%;
   mix-blend-mode: color; }
 
-.container-orange .mask {
+.node-orange .mask {
   background: orangered; }
 
-.container-blue .mask {
+.node-blue .mask {
   background: darkblue; }
 
-.container-white img {
+.node-white img {
   -webkit-filter: grayscale(1) contrast(0.6) brightness(2);
           filter: grayscale(1) contrast(0.6) brightness(2); }
 

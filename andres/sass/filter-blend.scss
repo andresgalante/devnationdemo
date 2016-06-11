@@ -20,14 +20,13 @@ img{
 // White pixels
 // filter: grayscale(1) contrast(.6) brightness(2);
 
-
 }
 
 
-.container{
+.node{
   display: inline-block;
   position: relative;
-  width: 200px;
+  width: 33%;
 }
 
 .mask{
@@ -39,19 +38,17 @@ img{
   mix-blend-mode: color;
 }
 
-.container-orange .mask{
+.node-orange .mask{
   background: orangered;
 }
 
-.container-blue .mask{
+.node-blue .mask{
   background: darkblue;
 }
 
-.container-white img{
+.node-white img{
   filter: grayscale(1) contrast(.6) brightness(2);
 }
-
-
 
 
 
