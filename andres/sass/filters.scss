@@ -1,94 +1,27 @@
 @import "base";
 
 img{
-//  background: red;
-// filter: blur(2em);
-// filter: brightness(5);
+// background: red;
+// filter: blur(3em);
+// filter: brightness(6);
 // filter: contrast(0.5);
-// filter: saturate(950%);
+// filter: saturate(40);
 // filter: grayscale(1);
-// filter: sepia(1);
+// filter: sepia(30%);
 // box-shadow: 0 0 10px red;
 // filter: drop-shadow(16px 16px 20px blue);
 // filter: hue-rotate(160deg);
 // filter: invert(0.5);
-// filter: opacity(.4);
+// filter: opacity(1);
+
+// filter: contrast(.8) brightness(.9) sepia(.3);
 
 // Instagram
 // filter: brightness(.9) contrast(.8) sepia(.3);
+
+filter: grayscale(1) contrast(.6) brightness(2);
 
 // White pixels
 // filter: grayscale(1) contrast(.6) brightness(2);
 
 }
-
-
-.node{
-  display: inline-block;
-  position: relative;
-  width: 33%;
-}
-
-.mask{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  mix-blend-mode: color;
-}
-
-.node-orange .mask{
-  background: orangered;
-}
-
-.node-blue .mask{
-  background: darkblue;
-}
-
-.node-white img{
-  filter: grayscale(1) contrast(.6) brightness(2);
-}
-
-
-
-// .blendmode img:first-of-type{
-/* Darken modes =================== */
-//  mix-blend-mode: multiply;
-//  mix-blend-mode: darken;
-//  mix-blend-mode: color-burn;
-
-/* Lightning modes =================== */
-//  mix-blend-mode: screen;
-//  mix-blend-mode: lighten;
-//  mix-blend-mode: color-dodge;
-
-/* Contrast modes =================== */
-//  mix-blend-mode: overlay;
-//  mix-blend-mode: soft-light;
-//  mix-blend-mode: hard-light;
-
-/* Comparative modes =================== */
-//  mix-blend-mode: difference;
-//  mix-blend-mode: exclusion;
-
-/* Composite modes =================== */
-//  mix-blend-mode: hue;
-//  mix-blend-mode: saturation;
-//  mix-blend-mode: luminosity;
-//  mix-blend-mode: color;
-//}
-
-
-/*
-
-body{
-  background: red;
-}
-
-img.paper{
-  filter: brightness(1.1) invert(1);
-  mix-blend-mode: screen;
-}
-
-*/

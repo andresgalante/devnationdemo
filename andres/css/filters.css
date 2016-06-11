@@ -34,43 +34,6 @@ img {
   display: inline-block;
 }
 */
-.node {
-  display: inline-block;
-  position: relative;
-  width: 33%; }
-
-.mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  mix-blend-mode: color; }
-
-.node-orange .mask {
-  background: orangered; }
-
-.node-blue .mask {
-  background: darkblue; }
-
-.node-white img {
+img {
   -webkit-filter: grayscale(1) contrast(0.6) brightness(2);
           filter: grayscale(1) contrast(0.6) brightness(2); }
-
-/* Darken modes =================== */
-/* Lightning modes =================== */
-/* Contrast modes =================== */
-/* Comparative modes =================== */
-/* Composite modes =================== */
-/*
-
-body{
-  background: red;
-}
-
-img.paper{
-  filter: brightness(1.1) invert(1);
-  mix-blend-mode: screen;
-}
-
-*/
