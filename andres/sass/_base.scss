@@ -3,14 +3,17 @@ html{
 }
 body{
   margin: 20px;
-  height: calc(100vw - 40px);
-}
-// resets the size of the image for filter example
-img{
-  max-width: calc(100vw - 40px);
-  max-height: calc(100vh - 40px);
+  height: calc(100vh - 40px);
 }
 
+// resets the size of the image for filter example
+img{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+/*
 .blendmode{
   img{
     position: absolute;
@@ -32,3 +35,4 @@ img{
   border-radius: 50%;
   display: inline-block;
 }
+*/
