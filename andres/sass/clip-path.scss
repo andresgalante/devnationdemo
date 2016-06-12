@@ -1,17 +1,16 @@
 @import "base";
 
-@keyframes drop{
-  from{
-    transform: scale3d(.2,.2,1);
-  }
-  to{
-    transform: scale3d(1,1,1);;
-  }
+body{
+//  background: red;
 }
 
 img{
-  display: inline-block;
-  width: 33%;
-  animation: drop 4s ease infinite;
+//clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%)
+// clip-path: circle( 140px at 190px 190px)
+
+// clip-path: polygon(50% 0,100% 50%, 50% 100%, 0 50%);
+// clip-path: circle( 150px at 190px 190px);
+// clip-path: circle(150px at 70px 90px);
+// clip-path: circle();
 //  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
 }

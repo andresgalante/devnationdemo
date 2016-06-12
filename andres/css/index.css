@@ -21,6 +21,18 @@ img {
   top: 200px;
   left: 200px; }
 
-img {
-  -webkit-filter: grayscale(1) contrast(0.8) brightness(2);
-          filter: grayscale(1) contrast(0.8) brightness(2); }
+ol > li {
+  margin-bottom: 30px; }
+  ol > li > a {
+    font-weight: bold;
+    font-size: 1.2em; }
+
+ol li li {
+  margin: 10px 0; }
+
+a {
+  color: orangered; }
+  a:hover {
+    text-decoration: none;
+    background: orangered;
+    color: #fff; }

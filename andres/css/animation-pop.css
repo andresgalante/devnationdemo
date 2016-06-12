@@ -21,24 +21,7 @@ img {
   top: 200px;
   left: 200px; }
 
-/*
-.ball{
-  background: tomato;
-  border: 2px solid red;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  display: inline-block;
-}
-*/
-@-webkit-keyframes drop {
-  from {
-    -webkit-transform: scale3d(0.2, 0.2, 1);
-            transform: scale3d(0.2, 0.2, 1); }
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); } }
-@keyframes drop {
+@-webkit-keyframes pop {
   from {
     -webkit-transform: scale3d(0.2, 0.2, 1);
             transform: scale3d(0.2, 0.2, 1); }
@@ -46,45 +29,18 @@ img {
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1); } }
 
-@-webkit-keyframes mask {
+@keyframes pop {
   from {
-    -webkit-filter: opacity(0);
-            filter: opacity(0); }
+    -webkit-transform: scale3d(0.2, 0.2, 1);
+            transform: scale3d(0.2, 0.2, 1); }
   to {
-    -webkit-filter: opacity(1);
-            filter: opacity(1); } }
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1); } }
 
-@keyframes mask {
-  from {
-    -webkit-filter: opacity(0);
-            filter: opacity(0); }
-  to {
-    -webkit-filter: opacity(1);
-            filter: opacity(1); } }
-
-.node {
-  display: inline-block;
-  position: relative;
-  width: 33%;
-  -webkit-animation: drop 1s infinite cubic-bezier(0.68, -0.95, 0.165, 2);
-          animation: drop 1s infinite cubic-bezier(0.68, -0.95, 0.165, 2); }
-
-.mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  mix-blend-mode: color;
-  -webkit-animation: mask 1s infinite cubic-bezier(0.68, -0.95, 0.165, 2);
-          animation: mask 1s infinite cubic-bezier(0.68, -0.95, 0.165, 2); }
-
-.node-orange .mask {
-  background: orangered; }
-
-.node-blue .mask {
-  background: darkblue; }
-
-.node-white img {
-  -webkit-filter: grayscale(1) contrast(0.6) brightness(2);
-          filter: grayscale(1) contrast(0.6) brightness(2); }
+img {
+  width: 80%;
+  margin: 10%;
+  -webkit-animation: pop 4s infinite;
+          animation: pop 4s infinite;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in; }

@@ -20,34 +20,3 @@ img {
   z-index: 1;
   top: 200px;
   left: 200px; }
-
-/*
-.ball{
-  background: tomato;
-  border: 2px solid red;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  display: inline-block;
-}
-*/
-@-webkit-keyframes drop {
-  from {
-    -webkit-transform: scale3d(0.2, 0.2, 1);
-            transform: scale3d(0.2, 0.2, 1); }
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); } }
-@keyframes drop {
-  from {
-    -webkit-transform: scale3d(0.2, 0.2, 1);
-            transform: scale3d(0.2, 0.2, 1); }
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); } }
-
-img {
-  display: inline-block;
-  width: 33%;
-  -webkit-animation: drop 4s ease infinite;
-          animation: drop 4s ease infinite; }

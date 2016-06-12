@@ -1,7 +1,6 @@
 @import "base";
 
-
-@keyframes drop{
+@keyframes pop{
   from{
     transform: scale3d(.2,.2,1);
   }
@@ -10,40 +9,11 @@
   }
 }
 
-@keyframes mask{
-  from{
-    filter: opacity(0);
-  }
-  to{
-    filter: opacity(1);
-  }
-}
+img{
+  width: 80%;
+  margin: 10%;
 
-.node{
-  display: inline-block;
-  position: relative;
-  width: 33%;
-  animation: drop 1s infinite cubic-bezier(0.68, -0.95, 0.165, 2);
-}
-
-.mask{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  mix-blend-mode: color;
-  animation: mask 1s infinite cubic-bezier(0.68, -0.95, 0.165, 2);
-}
-
-.node-orange .mask{
-  background: orangered;
-}
-
-.node-blue .mask{
-  background: darkblue;
-}
-
-.node-white img{
-  filter: grayscale(1) contrast(.6) brightness(2);
+  animation: pop 4s infinite;
+  animation-timing-function: ease-in;
+  //cubic-bezier(0.68, -0.95, 0.165, 2)
 }

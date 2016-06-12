@@ -1,0 +1,23 @@
+@import "base";
+
+ol {
+  > li{
+    margin-bottom: 30px;
+    > a{
+      font-weight: bold;
+      font-size: 1.2em;
+//      color: orangered;
+    }
+  }
+  li li{
+    margin: 10px 0;
+  }
+}
+a{
+  color: orangered;
+  &:hover{
+    text-decoration: none;
+    background: orangered;
+    color: #fff;
+  }
+}

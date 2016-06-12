@@ -1,5 +1,13 @@
 @import "base";
 
+@keyframes drop {
+  from{
+    transform: scale3d(2,2,1);
+  }
+  to{
+    transform: scale3d(1,1,1);
+  }
+}
 
 @keyframes drop{
   from{
@@ -10,22 +18,25 @@
   }
 }
 
-@keyframes mask{
+@keyframes mask {
   from{
     filter: opacity(0);
-  }
-  to{
-    filter: opacity(1);
   }
 }
 
 .node{
   display: inline-block;
   position: relative;
-  width: 33%;
-  animation: drop 4s ease infinite alternate;
+  width: 32%;
+//  animation: drop 4s ease infinite alternate;
+//  animation: drop 4s ease infinite alternate;
 //  transition: all .2s ease;
 }
+
+// .node:hover{
+//  transform: scale3d(2,2,1);
+//  z-index: 1;
+// }
 
 // .node:hover{
 //  transform: scale3d(2,2,1);
@@ -39,7 +50,7 @@
   width: 100%;
   height: 100%;
   mix-blend-mode: color;
-  animation: mask 4s ease infinite alternate;
+//  animation: mask 4s ease infinite alternate;
 }
 
 .node-orange .mask{

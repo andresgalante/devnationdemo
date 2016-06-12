@@ -10,33 +10,32 @@
 
     <svg>
       <defs>
+        <filter id="white">
+          <feColorMatrix
+            type = "matrix"
+            values="5     0     0     0     0
+                    0     5     0     0     0
+                    0     0     5     0     0
+                    0     0     0     1     0 "/>
+          <feColorMatrix type="saturate" values=".1"/>
+        </filter>
+        <filter id="blue">
+          <feColorMatrix
+            type="matrix"
+            values="1      0      0      0     0
+                    0      1      0      0     0
+                    0      0      1      0     0
+                    0      0      0      1     0 "/>
+        </filter>
         <filter id="orange">
-          <fecolormatrix
+          <feColorMatrix
             type="matrix"
             values="2     0     0     0    0
                     0     0.5   0     0    0
                     0     0     0     0    0
                     0     0     0     1    0 "/>
-          </filter>
+        </filter>
 
-          <filter id="blue">
-            <fecolormatrix
-              type="matrix"
-              values="0      0      0      0     0
-                      0      .5     0      0     0
-                      0      0      2      0     0
-                      0      0      0      1     0 "/>
-          </filter>
-
-          <filter id="white">
-            <fecolormatrix
-              type = "matrix"
-              values="5     0     0     0     0
-                      0     5     0     0     0
-                      0     0     5     0     0
-                      0     0     0     1     0 "/>
-            <fecolormatrix type="saturate" values=".1"/>
-          </filter>
         </defs>
 
         <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/filter.jpg" width="200" height="200" x="0" y="0" filter = "url(#white)"></image>
@@ -45,8 +44,6 @@
 
         <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/filter.jpg" width="200" height="200" x="400" y="0" filter = "url(#orange)"></image>
 
-
     </svg>
-
   </body>
 </html>
