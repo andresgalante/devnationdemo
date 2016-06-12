@@ -8,17 +8,45 @@
   </head>
   <body>
 
+    <svg>
+      <defs>
+        <filter id="orange">
+          <fecolormatrix
+            type="matrix"
+            values="2     0     0     0    0
+                    0     0.5   0     0    0
+                    0     0     0     0    0
+                    0     0     0     1    0 "/>
+          </filter>
 
-    <button class="toggle">Show Toast Notification</button>
+          <filter id="blue">
+            <fecolormatrix
+              type="matrix"
+              values="0      0      0      0     0
+                      0      .5     0      0     0
+                      0      0      2      0     0
+                      0      0      0      1     0 "/>
+          </filter>
+
+          <filter id="white">
+            <fecolormatrix
+              type = "matrix"
+              values="5     0     0     0     0
+                      0     5     0     0     0
+                      0     0     5     0     0
+                      0     0     0     1     0 "/>
+            <fecolormatrix type="saturate" values=".1"/>
+          </filter>
+        </defs>
+
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/filter.jpg" width="200" height="200" x="0" y="0" filter = "url(#white)"></image>
+
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/filter.jpg" width="200" height="200" x="200" y="0" filter = "url(#blue)"></image>
+
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/filter.jpg" width="200" height="200" x="400" y="0" filter = "url(#orange)"></image>
 
 
-  <div class="toast">
-    <div class="toast-icon"><i class="fa fa-check-circle-o"></i></div>
-    <div class="toast-text"><strong>server_abc</strong> has been added to main server group.</div>
-    <div class="toast-action">
-      <a href="#">Start Server</a>
-    </div>
-  </div>
+    </svg>
 
   </body>
 </html>

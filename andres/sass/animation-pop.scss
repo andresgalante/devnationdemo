@@ -23,7 +23,7 @@
   display: inline-block;
   position: relative;
   width: 33%;
-  animation: drop 4s ease infinite;
+  animation: drop 1s infinite cubic-bezier(0.68, -0.95, 0.165, 2);
 }
 
 .mask{
@@ -33,7 +33,7 @@
   width: 100%;
   height: 100%;
   mix-blend-mode: color;
-  animation: mask 4s ease infinite;
+  animation: mask 1s infinite cubic-bezier(0.68, -0.95, 0.165, 2);
 }
 
 .node-orange .mask{

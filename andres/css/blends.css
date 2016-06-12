@@ -11,20 +11,17 @@ img {
   max-height: 100%;
   display: block; }
 
-/*
-.blendmode{
-  img{
-    position: absolute;
-    max-width: calc(100vw - 180px);
-    max-height: calc(100vh - 180px);
-  }
-  img:first-of-type{
-    z-index: 1;
-    top:160px;
-    left: 160px;
-  }
-}
+.blendmode img {
+  position: absolute;
+  max-width: calc(100vw - 180px);
+  max-height: calc(100vh - 180px); }
 
+.blendmode img:first-of-type {
+  z-index: 1;
+  top: 200px;
+  left: 200px; }
+
+/*
 .ball{
   background: tomato;
   border: 2px solid red;
@@ -34,6 +31,18 @@ img {
   display: inline-block;
 }
 */
+.blendmode img:first-of-type {
+  /* Darken modes =================== */
+  /* Lightning modes =================== */
+  /* Contrast modes =================== */
+  /* Comparative modes =================== */
+  /* Composite modes =================== */ }
+
+img.paper {
+  -webkit-filter: brightness(1.4) invert(1);
+          filter: brightness(1.4) invert(1);
+  mix-blend-mode: screen; }
+
 .node {
   display: inline-block;
   position: relative;
@@ -47,30 +56,12 @@ img {
   height: 100%;
   mix-blend-mode: color; }
 
+.node-white img {
+  -webkit-filter: grayscale(1) contrast(0.6) brightness(2);
+          filter: grayscale(1) contrast(0.6) brightness(2); }
+
 .node-orange .mask {
   background: orangered; }
 
 .node-blue .mask {
   background: darkblue; }
-
-.node-white img {
-  -webkit-filter: grayscale(1) contrast(0.6) brightness(2);
-          filter: grayscale(1) contrast(0.6) brightness(2); }
-
-/* Darken modes =================== */
-/* Lightning modes =================== */
-/* Contrast modes =================== */
-/* Comparative modes =================== */
-/* Composite modes =================== */
-/*
-
-body{
-  background: red;
-}
-
-img.paper{
-  filter: brightness(1.1) invert(1);
-  mix-blend-mode: screen;
-}
-
-*/

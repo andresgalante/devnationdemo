@@ -11,20 +11,17 @@ img {
   max-height: 100%;
   display: block; }
 
-/*
-.blendmode{
-  img{
-    position: absolute;
-    max-width: calc(100vw - 180px);
-    max-height: calc(100vh - 180px);
-  }
-  img:first-of-type{
-    z-index: 1;
-    top:160px;
-    left: 160px;
-  }
-}
+.blendmode img {
+  position: absolute;
+  max-width: calc(100vw - 180px);
+  max-height: calc(100vh - 180px); }
 
+.blendmode img:first-of-type {
+  z-index: 1;
+  top: 200px;
+  left: 200px; }
+
+/*
 .ball{
   background: tomato;
   border: 2px solid red;
@@ -34,6 +31,3 @@ img {
   display: inline-block;
 }
 */
-img {
-  -webkit-filter: grayscale(1) contrast(0.6) brightness(2);
-          filter: grayscale(1) contrast(0.6) brightness(2); }
