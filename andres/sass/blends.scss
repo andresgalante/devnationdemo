@@ -29,9 +29,12 @@
 }
 
 body{
+//  background: red;
 }
 
 img.paper{
+  filter: brightness(1.3) invert(1);
+  mix-blend-mode: screen;
 
 //  filter: brightness(1.4) invert(1);
 //  mix-blend-mode: screen;
@@ -49,6 +52,7 @@ img.paper{
   left: 0;
   width: 100%;
   height: 100%;
+  mix-blend-mode: color;
 //  mix-blend-mode: color;
 }
 
@@ -58,9 +62,11 @@ img.paper{
 
 
 .node-orange .mask{
+  background: orangered;
 //  background: orangered;
 }
 
 .node-blue .mask{
+  background: darkblue;
 //  background: darkblue;
 }

@@ -13,7 +13,6 @@ img{
   width: 80%;
   margin: 10%;
 
-  animation: pop 4s infinite;
-  animation-timing-function: ease-in;
-  //cubic-bezier(0.68, -0.95, 0.165, 2)
+  animation: pop 1s infinite;
+  animation-timing-function: -bezier(0.68, -0.95, 0.165, 2)
 }
