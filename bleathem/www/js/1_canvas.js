@@ -9,7 +9,7 @@ var colortest = document.querySelector('.color-display'),
     colorvalue = document.querySelector('.color-value');
 
 var image = new Image();
-image.src = 'assets/devnation.svg';
+image.src = '/assets/devnation.svg';
 
 image.onload = event => {
   let aspectRatio = image.height / image.width;
