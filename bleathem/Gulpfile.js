@@ -46,37 +46,34 @@ gulp.task('watch',function() {
 
 // js input file
 watchify.args.debug = true;
-var bundlers = [];
-bundlers.push({
-  watch: watchify(browserify('./www/js/1_canvas.js', watchify.args)),
-  target: '1_canvas'
-})
-bundlers.push({
-  watch: watchify(browserify('./www/js/2_mosaic.js', watchify.args)),
-  target: '2_mosaic'
-})
-bundlers.push({
-  watch: watchify(browserify('./www/js/3_falling.js', watchify.args)),
-  target: '3_falling'
-})
+var modules = [];
+function addModule(name) {
+  modules.push({
+    bundler: watchify(browserify(`./www/js/${name}`, watchify.args)),
+    target: name
+  })
+}
+addModule('1_canvas');
+addModule('2_mosaic');
+addModule('3_falling');
 
 // On updates recompile
-bundlers.forEach(function(bundler) {
-  bundler.watch.on('update', function() {
-    bundle(bundler)
+modules.forEach(function(module) {
+  module.bundler.on('update', function() {
+    bundle(module)
   });
 })
 
-function bundle(bundler) {
+function bundle(module) {
   gutil.log('Compiling JS...');
-  return bundler.watch.bundle()
+  return module.bundler.bundle()
   .on('error', function (err) {
     gutil.log(err.message);
     browserSync.notify("Browserify Error!");
     this.emit("end");
   })
-  .pipe(exorcist('www/js/dist/'+bundler.target + '.bundle.js.map'))
-  .pipe(source(bundler.target+'.bundle.js'))
+  .pipe(exorcist('www/js/dist/'+module.target + '.bundle.js.map'))
+  .pipe(source(module.target+'.bundle.js'))
   .pipe(gulp.dest('./www/js/dist'))
   .pipe(browserSync.stream({once: true}));
 }
@@ -85,7 +82,7 @@ function bundle(bundler) {
  * Gulp task alias
  */
 gulp.task('bundle', function () {
-  bundlers.forEach(function(bundler) {
+  modules.forEach(function(bundler) {
     return bundle(bundler);
   })
 });
