@@ -5,15 +5,22 @@
   <title>Index - DevNation 2016</title>
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/style.css">
-  <script defer type="text/javascript" src="/js/dist/bundle.js"></script>
+  <script defer type="text/javascript" src="/js/dist/1_canvas.bundle.js"></script>
 </head>
 <body>
   <div><a href="/">Home</a></div>
   <canvas id="source"></canvas>
-  <div id="target"></div>
-  <div class='color'>
-    <div class="color-display"></div>
-    <div class="color-value"></div>
+  <div>
+    <div class='preview'>
+      <div class="preview-color"></div>
+      <div class="preview-rgba"></div>
+    </div>
+    <div class="preview">
+      <div class="node">
+        <div class="mask"></div>
+        <img src="/assets/crowd.jpg">
+      </div>
+    </div>
   </div>
 </body>
 </html>

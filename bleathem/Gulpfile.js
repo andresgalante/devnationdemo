@@ -41,26 +41,38 @@ gulp.task('bs-reload', function () {
 gulp.task('watch',function() {
     gulp.watch('www/sass/**/*.scss',['styles']);
     gulp.watch("www/**/*.html", ['bs-reload']);
-    gulp.watch("www/**/*.js", ['bs-reload']);
+    // gulp.watch("www/**/*.js", ['bs-reload']);
 });
 
 // js input file
 watchify.args.debug = true;
-var bundler = watchify(browserify('./www/js/app.js', watchify.args));
+var bundlers = [];
+bundlers[0] = {
+  watch: watchify(browserify('./www/js/1_canvas.js', watchify.args)),
+  target: '1_canvas'
+}
+bundlers[1] = {
+  watch: watchify(browserify('./www/js/2_mosaic.js', watchify.args)),
+  target: '2_mosaic'
+}
 
 // On updates recompile
-bundler.on('update', bundle);
+bundlers.forEach(function(bundler) {
+  bundler.watch.on('update', function() {
+    bundle(bundler)
+  });
+})
 
-function bundle() {
+function bundle(bundler) {
   gutil.log('Compiling JS...');
-  return bundler.bundle()
+  return bundler.watch.bundle()
   .on('error', function (err) {
     gutil.log(err.message);
     browserSync.notify("Browserify Error!");
     this.emit("end");
   })
-  .pipe(exorcist('www/js/dist/bundle.js.map'))
-  .pipe(source('bundle.js'))
+  .pipe(exorcist('www/js/dist/'+bundler.target + '.bundle.js.map'))
+  .pipe(source(bundler.target+'.bundle.js'))
   .pipe(gulp.dest('./www/js/dist'))
   .pipe(browserSync.stream({once: true}));
 }
@@ -69,7 +81,9 @@ function bundle() {
  * Gulp task alias
  */
 gulp.task('bundle', function () {
-    return bundle();
+  bundlers.forEach(function(bundler) {
+    return bundle(bundler);
+  })
 });
 
 // deploys
