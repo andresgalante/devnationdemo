@@ -13,9 +13,12 @@ document.querySelector('.mosaic').addEventListener('animationend', event => {
     return;
   }
   let tile = JSON.parse(node.dataset.tile);
-  var img = node.querySelector('img');
-  context.drawImage(img, tile.x, tile.y, 18, 18);
-  node.parentElement.removeChild(node);
+  var img = document.createElement('img');
+  img.src = `/assets/crowd-${tile.colorname}.png`;
+  img.onload = () => {
+    context.drawImage(img, tile.x, tile.y, 18, 18);
+    node.parentElement.removeChild(node);
+  }
 })
 
 colormap.init('1800')

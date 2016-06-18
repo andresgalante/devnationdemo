@@ -4,7 +4,18 @@ var _ = require('lodash'),
     q= require('q'),
     colormap = require('./colormap'),
     shuffle = require('./shuffle'),
-    Rx = require('rx');
+    Rx = require('rx'),
+    nameThisColor = require('name-this-color');
+
+var colorMap = {
+  'black': 'white',
+  'mirage': 'blue',
+  'livid-brown': 'orange',
+  'burnt-sienna': 'orange',
+  'buccaneer': 'blue',
+  'lotus': 'blue',
+  'carnation': 'orange'
+}
 
 function init(rect) {
   let mosaic = document.querySelector('.mosaic');
@@ -22,6 +33,8 @@ function init(rect) {
           y = row * tileSize,
           delta = Math.floor(tileSize / 2);
       let colorData = colormap.getColor(x + delta,y + delta);
+      let c = colorData;
+      let colorname = nameThisColor(`rgb(${c[0]}, ${c[1]}, ${c[2]})`)[0]
       tiles.push({
         col: col,
         row: row,
@@ -29,6 +42,7 @@ function init(rect) {
         y: y,
         tileSize: tileSize,
         colorData: colorData,
+        colorname: colorMap[colorname.name],
         mosaic: mosaic
       })
     }
@@ -49,7 +63,7 @@ function drawTile(tile) {
     node.appendChild(mask);
   }
   var img = document.createElement('img');
-  img.src = '/assets/crowd-small.jpg'
+  img.src = '/assets/crowd-small.png'
   img.style.width = tile.tileSize + 'px';
   node.style.left = tile.x + 'px';
   node.style.top = tile.y + 'px';

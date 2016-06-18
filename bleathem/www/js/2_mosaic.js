@@ -52,7 +52,7 @@ function drawTile(tile) {
     node.appendChild(mask);
   }
   var img = document.createElement('img');
-  img.src = '/assets/crowd-small.jpg'
+  img.src = '/assets/crowd-small.png'
   img.style.width = tile.tileSize + 'px';
   node.style.left = tile.x + 'px';
   node.style.top = tile.y + 'px';

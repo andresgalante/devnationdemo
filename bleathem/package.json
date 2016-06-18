@@ -21,7 +21,9 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "gm": "^1.22.0",
     "lodash": "^4.13.1",
+    "name-this-color": "^1.0.2",
     "q": "^1.4.1",
     "rx": "^4.1.0"
   }
