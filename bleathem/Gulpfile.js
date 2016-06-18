@@ -47,14 +47,18 @@ gulp.task('watch',function() {
 // js input file
 watchify.args.debug = true;
 var bundlers = [];
-bundlers[0] = {
+bundlers.push({
   watch: watchify(browserify('./www/js/1_canvas.js', watchify.args)),
   target: '1_canvas'
-}
-bundlers[1] = {
+})
+bundlers.push({
   watch: watchify(browserify('./www/js/2_mosaic.js', watchify.args)),
   target: '2_mosaic'
-}
+})
+bundlers.push({
+  watch: watchify(browserify('./www/js/3_falling.js', watchify.args)),
+  target: '3_falling'
+})
 
 // On updates recompile
 bundlers.forEach(function(bundler) {
