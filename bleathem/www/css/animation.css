@@ -19,3 +19,23 @@
           animation: drop 1s ease;
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%; }
+
+@-webkit-keyframes mask {
+  from {
+    -webkit-filter: opacity(0);
+            filter: opacity(0); }
+  to {
+    -webkit-filter: opacity(1);
+            filter: opacity(1); } }
+
+@keyframes mask {
+  from {
+    -webkit-filter: opacity(0);
+            filter: opacity(0); }
+  to {
+    -webkit-filter: opacity(1);
+            filter: opacity(1); } }
+
+.mask {
+  -webkit-animation: mask 1s ease;
+          animation: mask 1s ease; }

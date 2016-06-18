@@ -11,3 +11,16 @@
   animation:  drop 1s ease;
   transform-origin: 50% 50%;
 }
+
+@keyframes mask {
+  from{
+    filter: opacity(0);
+  }
+  to{
+    filter: opacity(1);
+  }
+}
+
+.mask {
+  animation: mask 1s ease;
+}
