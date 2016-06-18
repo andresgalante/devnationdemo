@@ -2,14 +2,16 @@
 
 var _ = require('lodash'),
     q= require('q'),
-    canvas = require('./canvas');
+    colormap = require('./colormap'),
+    shuffle = require('./shuffle'),
+    Rx = require('rx');
 
 function init(rect) {
-  let target = document.querySelector('.target');
-  target.style.width = rect.width + 'px';
-  target.style.height = rect.height + 'px';
-  target.style.top = rect.top + 'px';
-  target.style.left = rect.left + 'px';
+  let mosaic = document.querySelector('.mosaic');
+  mosaic.style.width = rect.width + 'px';
+  mosaic.style.height = rect.height + 'px';
+  mosaic.style.top = rect.top + 'px';
+  mosaic.style.left = rect.left + 'px';
   let tileSize = 18;
   let cols = Math.ceil(rect.width / tileSize),
       rows = Math.ceil(rect.height / tileSize);
@@ -19,7 +21,7 @@ function init(rect) {
       let x = col * tileSize,
           y = row * tileSize,
           delta = Math.floor(tileSize / 2);
-      let colorData = canvas.getColor(x + delta,y + delta);
+      let colorData = colormap.getColor(x + delta,y + delta);
       tiles.push({
         col: col,
         row: row,
@@ -27,7 +29,7 @@ function init(rect) {
         y: y,
         tileSize: tileSize,
         colorData: colorData,
-        target: target
+        mosaic: mosaic
       })
     }
   }
@@ -51,10 +53,21 @@ function drawTile(tile) {
   img.style.width = tile.tileSize + 'px';
   node.style.left = tile.x + 'px';
   node.style.top = tile.y + 'px';
+  node.dataset.tile = JSON.stringify(tile);
   node.appendChild(img);
-  img.onload = ev => tile.target.appendChild(node);
+  img.onload = ev => tile.mosaic.appendChild(node);
 }
 
+function animateTiles(tiles) {
+  shuffle(tiles);
+  Rx.Observable.zip(
+    Rx.Observable.from(tiles).bufferWithCount(2),
+    Rx.Observable.interval(4),
+    (tiles, index) => tiles
+  )
+  .flatMap(tiles => tiles)
+  .subscribe(tile => mosaic.drawTile(tile));
+};
 
 module.exports = {
   init: init,

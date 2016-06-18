@@ -1,15 +1,15 @@
 'use strict';
 
 var _ = require('lodash'),
-    canvas = require('./modules/canvas');
+    colormap = require('./modules/colormap');
 
-canvas.init('1800').
+colormap.init('1800').
   then(rect => {
-    let target = document.querySelector('.target');
-    target.style.width = rect.width + 'px';
-    target.style.height = rect.height + 'px';
-    target.style.top = rect.top + 'px';
-    target.style.left = rect.left + 'px';
+    let mosaic = document.querySelector('.mosaic');
+    mosaic.style.width = rect.width + 'px';
+    mosaic.style.height = rect.height + 'px';
+    mosaic.style.top = rect.top + 'px';
+    mosaic.style.left = rect.left + 'px';
     let tileSize = 18;
     let cols = Math.ceil(rect.width / tileSize),
         rows = Math.ceil(rect.height / tileSize);
@@ -19,7 +19,7 @@ canvas.init('1800').
         let x = col * tileSize,
             y = row * tileSize,
             delta = Math.floor(tileSize / 2);
-        let colorData = canvas.getColor(x + delta,y + delta);
+        let colorData = colormap.getColor(x + delta,y + delta);
         tiles.push({
           col: col,
           row: row,
@@ -27,7 +27,7 @@ canvas.init('1800').
           y: y,
           tileSize: tileSize,
           colorData: colorData,
-          target: target
+          mosaic: mosaic
         })
       }
     }
@@ -57,5 +57,5 @@ function drawTile(tile) {
   node.style.left = tile.x + 'px';
   node.style.top = tile.y + 'px';
   node.appendChild(img);
-  img.onload = ev => tile.target.appendChild(node);
+  img.onload = ev => tile.mosaic.appendChild(node);
 }

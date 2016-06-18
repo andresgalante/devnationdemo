@@ -53,9 +53,10 @@ function addModule(name) {
     target: name
   })
 }
-addModule('1_canvas');
+addModule('1_colormap');
 addModule('2_mosaic');
 addModule('3_falling');
+addModule('4_canvas');
 
 // On updates recompile
 modules.forEach(function(module) {

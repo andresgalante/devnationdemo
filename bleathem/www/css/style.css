@@ -19,7 +19,7 @@
 .preview-rgba {
   display: block; }
 
-.target {
+.mosaic, #target {
   position: absolute;
   display: inline-block; }
 

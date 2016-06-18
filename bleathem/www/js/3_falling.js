@@ -1,11 +1,11 @@
 'use strict';
 
-var canvas = require('./modules/canvas'),
+var colormap = require('./modules/colormap'),
     mosaic = require('./modules/mosaic'),
     shuffle = require('./modules/shuffle'),
     Rx = require('rx');
 
-canvas.init('1800')
+colormap.init('1800')
   .then(mosaic.init)
   .then(tiles => {
     shuffle(tiles);
