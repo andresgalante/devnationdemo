@@ -1,25 +1,22 @@
 @import "base";
 
 img{
-//  background: red;
-// filter: blur(4vw);
-// filter: brightness(1);
-// filter: contrast(.3);
+//   background: red;
+// filter: blur(4vh);
+// filter: brightness(.5);
+// filter: contrast(.6);
 // filter: saturate(.2);
-// filter: grayscale(0.5);
+// filter: grayscale(1);
 // filter: sepia(100%);
-// box-shadow: 0 0 10px red;
+// box-shadow: 0 0  100px red;
 // filter: drop-shadow(16px 16px 20px blue);
-// filter: hue-rotate(60deg);
-// filter: invert(.5);
-// filter: opacity(0);
+// filter: hue-rotate(80deg);
+// filter: invert(1);
+// filter: opacity(.5);
 // opacity: .5;
 
-filter: grayscale(1) contrast(.8) brightness(3);
-
-
-
-// White pixels
-// filter: grayscale(1) contrast(.6) brightness(2);
+filter: grayscale(1) contrast(.6) brightness(2);
+// OLD
+// filter: contrast(.8) saturate(.9) sepia(.4);
 
 }

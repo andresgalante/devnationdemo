@@ -1,29 +1,10 @@
 @import "base";
 
-@keyframes drop {
-  from{
-    transform: scale3d(2,2,1);
-  }
-  to{
-    transform: scale3d(1,1,1);
-  }
-}
-
-@keyframes drop{
-  from{
-    transform: scale3d(2,2,1);
-  }
-  to{
-    transform: scale3d(1,1,1);;
-  }
-}
-
 @keyframes mask {
   from{
     filter: opacity(0);
   }
 }
-
 
 @keyframes drop {
   from{
@@ -31,15 +12,6 @@
   }
   to{
     transform: scale3d(1,1,1);
-  }
-}
-
-@keyframes mask {
-  from{
-    filter: opacity(0);
-  }
-  to{
-    filter: opacity(1);
   }
 }
 
@@ -47,23 +19,8 @@
   display: inline-block;
   position: relative;
   width: 32%;
-  animation:  drop 4s ease infinite alternate;
-
-//  animation: drop 4s ease infinite alternate;
-//  animation: drop 4s ease infinite alternate;
-//  transition: all .2s ease;
+  animation: drop 4s ease infinite alternate;
 }
-
-
-// .node:hover{
-//  transform: scale3d(2,2,1);
-//  z-index: 1;
-// }
-
-// .node:hover{
-//  transform: scale3d(2,2,1);
-//  z-index: 1;
-// }
 
 .mask{
   position: absolute;
@@ -76,11 +33,11 @@
 }
 
 .node-orange .mask{
-  background: orangered;
+  background: rgba(241, 94, 75, 1);
 }
 
 .node-blue .mask{
-  background: darkblue;
+  background: rgba(25, 25, 48, 1);
 }
 
 .node-white img{

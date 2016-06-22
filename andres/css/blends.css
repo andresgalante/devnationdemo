@@ -51,7 +51,7 @@ img.paper {
           filter: grayscale(1) contrast(0.6) brightness(2); }
 
 .node-orange .mask {
-  background: orangered; }
+  background: #f15e4b; }
 
 .node-blue .mask {
-  background: darkblue; }
+  background: #191930; }

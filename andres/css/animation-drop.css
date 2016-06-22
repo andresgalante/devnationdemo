@@ -21,6 +21,16 @@ img {
   top: 200px;
   left: 200px; }
 
+@-webkit-keyframes mask {
+  from {
+    -webkit-filter: opacity(0);
+            filter: opacity(0); } }
+
+@keyframes mask {
+  from {
+    -webkit-filter: opacity(0);
+            filter: opacity(0); } }
+
 @-webkit-keyframes drop {
   from {
     -webkit-transform: scale3d(2, 2, 1);
@@ -36,40 +46,6 @@ img {
   to {
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1); } }
-
-@keyframes drop {
-  from {
-    -webkit-transform: scale3d(2, 2, 1);
-            transform: scale3d(2, 2, 1); }
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); } }
-
-@-webkit-keyframes mask {
-  from {
-    -webkit-filter: opacity(0);
-            filter: opacity(0); } }
-
-@keyframes mask {
-  from {
-    -webkit-filter: opacity(0);
-            filter: opacity(0); } }
-
-@keyframes drop {
-  from {
-    -webkit-transform: scale3d(2, 2, 1);
-            transform: scale3d(2, 2, 1); }
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); } }
-
-@keyframes mask {
-  from {
-    -webkit-filter: opacity(0);
-            filter: opacity(0); }
-  to {
-    -webkit-filter: opacity(1);
-            filter: opacity(1); } }
 
 .node {
   display: inline-block;
@@ -89,10 +65,10 @@ img {
           animation: mask 4s ease infinite alternate; }
 
 .node-orange .mask {
-  background: orangered; }
+  background: #f15e4b; }
 
 .node-blue .mask {
-  background: darkblue; }
+  background: #191930; }
 
 .node-white img {
   -webkit-filter: grayscale(1) contrast(0.6) brightness(2);

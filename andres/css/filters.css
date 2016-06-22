@@ -22,5 +22,5 @@ img {
   left: 200px; }
 
 img {
-  -webkit-filter: grayscale(1) contrast(0.8) brightness(3);
-          filter: grayscale(1) contrast(0.8) brightness(3); }
+  -webkit-filter: grayscale(1) contrast(0.6) brightness(2);
+          filter: grayscale(1) contrast(0.6) brightness(2); }
