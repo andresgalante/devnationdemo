@@ -14,6 +14,8 @@ var colorMap = {
   'burnt-sienna': 'orange',
   'buccaneer': 'blue',
   'lotus': 'blue',
+  'steel-gray': 'blue',
+  'apple-blossom': 'orange',
   'carnation': 'orange'
 }
 
@@ -35,6 +37,9 @@ function init(rect) {
       let colorData = colormap.getColor(x + delta,y + delta);
       let c = colorData;
       let colorname = nameThisColor(`rgb(${c[0]}, ${c[1]}, ${c[2]})`)[0]
+      if (! colorMap[colorname.name]) {
+        console.error('No colorMap key for', colorname.name);
+      }
       tiles.push({
         col: col,
         row: row,

@@ -15,10 +15,13 @@
   }
 }
 
+.border {
+  border: solid 1px black;
+}
+
 .preview-color {
   width: 170px;
   height: 170px;
-  border: solid black 1px;
 }
 
 .preview-rgba {
@@ -28,6 +31,7 @@
 .mosaic, #target {
   position: absolute;
   display: inline-block;
+  overflow: hidden;
 }
 
 .node {
@@ -55,4 +59,16 @@
 .node-blue .mask{
   background: rbga(25, 25, 48, 255);
 //  background: darkblue;
+}
+
+.bar {
+  border-bottom: solid 1px lightgray;
+  a {
+    display:table-cell;
+    vertical-align:middle;
+    padding: 15px;
+  }
+
+  margin-bottom: 20px
+
 }
