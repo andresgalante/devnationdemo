@@ -15,7 +15,7 @@ colormap.init('1600')
     /* Step 1: Use the clip path to get diamonds */
     // document.querySelector('.mosaic').classList.add('clip')
 
-    /* Step 4: animate with pre-colored images */
+    /* Step 4: animate with pre-clipped and pre-colored images */
     falling.animate(tiles)
     .subscribe(tile => mosaic.drawTile(tile))
     // falling.animate(tiles)

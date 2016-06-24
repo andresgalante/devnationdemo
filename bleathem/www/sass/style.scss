@@ -73,6 +73,37 @@
 
 }
 
+@keyframes drop {
+  from{
+    transform: scale3d(2,2,1);
+  }
+  to{
+    transform: scale3d(1,1,1);
+  }
+}
+
+@keyframes mask {
+  from{
+    filter: opacity(0);
+  }
+  to{
+    filter: opacity(1);
+  }
+}
+
+.animate-node {
+  .node {
+    animation:  drop 1s ease;
+    transform-origin: 50% 50%;
+  }
+}
+
+.animate-mask {
+  .mask {
+    animation: mask 1s ease;
+  }
+}
+
 .clip {
   .mask, img{
     clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);

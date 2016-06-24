@@ -10,7 +10,11 @@ colormap.init('1600')
   /* Step 2: initialize the img container */
   .then(mosaic.init)
   .then(tiles => {
-    /* Step 3: Animate the tiles */
+    /* Step 4: Animate the tiles */
+    // document.querySelector('.mosaic').classList.add('animate-node')
+    // document.querySelector('.mosaic').classList.add('animate-mask')
+
+    /* Step 3: Draw the tiles all at once */
     // tiles.forEach(function(tile) {
     //   mosaic.drawTile(tile);
     // })

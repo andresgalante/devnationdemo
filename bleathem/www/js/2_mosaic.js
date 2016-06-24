@@ -7,16 +7,16 @@ var _ = require('lodash'),
 colormap.init('1600').
   then(rect => {
     /* Step 2: resize the div img container */
-    let mosaic = document.querySelector('.mosaic');
-    resizeMosaic(mosaic, rect);
+    // let mosaic = document.querySelector('.mosaic');
+    // resizeMosaic(mosaic, rect);
 
     /* Step 3: break the img container up into a grid of "tiles" */
-    let tiles = generateTileList(mosaic, rect);
+    // let tiles = generateTileList(mosaic, rect);
 
     /* Step 4: draw each tile into the grid */
-    tiles.forEach(function(tile) {
-      drawTile(tile);
-    })
+    // tiles.forEach(function(tile) {
+    //   drawTile(tile);
+    // })
   })
   .catch(function(err) {
     console.error(err.stack);

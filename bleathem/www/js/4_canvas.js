@@ -11,7 +11,7 @@ var context = target.getContext('2d');
 /* Step 1: initialize the canvas, colormap */
 colormap.init('1600')
   .then(rect => {
-    /* Step 2: initialize a new target canvas */
+    /* Step 2: New: initialize a target canvas */
     document.body.style['min-width'] = '1700px';
     target.setAttribute('width', rect.width);
     target.setAttribute('height', rect.height);
@@ -43,11 +43,14 @@ document.querySelector('.mosaic').addEventListener('animationend', event => {
   var img = new Image();
   img.src = `/assets/crowd-${tile.colorname}-small.png`;
   img.onload = () => {
-    // render the image to the new canvas
-    context.drawImage(img, tile.x, tile.y, 18, 18);
-    // remove the animated element
-    node.parentElement.removeChild(node);
+    /* Step 7: Draw the image on the canvas */
+    // context.drawImage(img, tile.x, tile.y, 18, 18);
+    /* Step 8: Remove the animated element */
+    // node.parentElement.removeChild(node);
   }
 })
 
-/* Step 7: Show FPS, see how disabling the .mask animation helps */
+/* Step 7: Show FPS */
+
+/* Step 8: Disable the .mask animation */
+// document.querySelector('.mosaic').classList.remove('animate-mask')
