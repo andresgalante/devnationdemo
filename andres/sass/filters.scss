@@ -1,21 +1,22 @@
 @import "base";
 
 img{
-//   background: red;
+//  background: red;
 // filter: blur(4vh);
-// filter: brightness(.5);
-// filter: contrast(.6);
-// filter: saturate(.2);
+// filter: brightness(3);
+// filter: contrast(9);
+// filter: saturate(300%);
 // filter: grayscale(1);
 // filter: sepia(100%);
-// box-shadow: 0 0  100px red;
+// box-shadow: 0 0 10px red;
 // filter: drop-shadow(16px 16px 20px blue);
 // filter: hue-rotate(80deg);
 // filter: invert(1);
-// filter: opacity(.5);
+// filter: opacity(10%);
 // opacity: .5;
 
-filter: grayscale(1) contrast(.6) brightness(2);
+filter: grayscale(1) contrast(.7) brightness(2);
+
 // OLD
 // filter: contrast(.8) saturate(.9) sepia(.4);
 

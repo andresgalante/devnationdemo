@@ -33,19 +33,19 @@ img {
 
 @-webkit-keyframes drop {
   from {
-    -webkit-transform: scale3d(2, 2, 1);
-            transform: scale3d(2, 2, 1); }
+    -webkit-transform: scale(2);
+            transform: scale(2); }
   to {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); } }
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
 
 @keyframes drop {
   from {
-    -webkit-transform: scale3d(2, 2, 1);
-            transform: scale3d(2, 2, 1); }
+    -webkit-transform: scale(2);
+            transform: scale(2); }
   to {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); } }
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
 
 .node {
   display: inline-block;
