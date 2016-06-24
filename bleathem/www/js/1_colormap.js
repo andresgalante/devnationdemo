@@ -15,21 +15,24 @@ image.onload = event => {
   // context.drawImage(image, 0, 0, canvas.width, canvas.height)
 
   /* Step 3: set the canvas size */
-  // canvas.width = 900;
+  // canvas.width = 1100;
   // canvas.height = 500;
   // context.drawImage(image, 0, 0, canvas.width, canvas.height)
 
   /* Step 4: preserve the aspect ratio */
-  // canvas.width = 900;
+  // canvas.width = 1100;
   // let aspectRatio = image.height / image.width;
   // canvas.height = canvas.width * aspectRatio;
   // context.drawImage(image, 0, 0, canvas.width, canvas.height)
 
   /* Step 5: retrieve imageData */
-  /* Note: uncomment the preview div in html */
   // let imageData = context.getImageData(100, 100, 1, 1);
   // let [r,g,b, a] = imageData.data;
   // let colorString = `rgba(${r}, ${g}, ${b}, ${a})`
+  // console.log(colorString);
+
+  /* Step 6: Visual representation of this color */
+  /* Note: uncomment the preview div in html */
   // previewColor(colorString);
 
   rect = canvas.getBoundingClientRect();

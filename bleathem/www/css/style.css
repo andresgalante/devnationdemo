@@ -8,14 +8,14 @@
   display: inline-block;
   margin-left: 20px; }
   .preview img {
-    width: 170px;
+    height: 168px;
     border: solid black 1px; }
 
 .border {
   border: solid 1px black; }
 
 .preview-color {
-  width: 170px;
+  width: 170x;
   height: 170px; }
 
 .preview-rgba {
