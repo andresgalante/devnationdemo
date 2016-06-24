@@ -6,13 +6,12 @@ var mosaic = require('./mosaic'),
 
 function animate(tiles) {
   shuffle(tiles);
-  Rx.Observable.zip(
+  return Rx.Observable.zip(
     Rx.Observable.from(tiles).bufferWithCount(2),
     Rx.Observable.interval(4),
     (tiles, index) => tiles
   )
-  .flatMap(tiles => tiles)
-  .subscribe(tile => mosaic.drawTile(tile));
+  .flatMap(tiles => tiles);
 }
 
 module.exports = {

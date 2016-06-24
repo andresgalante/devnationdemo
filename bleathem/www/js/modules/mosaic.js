@@ -15,8 +15,10 @@ var colorMap = {
   'buccaneer': 'blue',
   'lotus': 'blue',
   'steel-gray': 'blue',
+  'thunder': 'blue',
   'apple-blossom': 'orange',
-  'carnation': 'orange'
+  'carnation': 'orange',
+  'chestnut': 'orange'
 }
 
 function init(rect) {
@@ -55,6 +57,43 @@ function init(rect) {
   return q.when(tiles);
 }
 
+function generateDiamondTiles(rect) {
+  var preColored = preColored || false;
+  let mosaic = document.querySelector('.mosaic');
+  mosaic.style.width = rect.width + 'px';
+  mosaic.style.height = rect.height + 'px';
+  mosaic.style.top = rect.top + 'px';
+  mosaic.style.left = rect.left + 'px';
+  let tileSize = 18;
+  let cols = Math.ceil(rect.width / tileSize),
+      rows = 2* Math.ceil(rect.height / tileSize);
+  let tiles = [];
+  for (let col = 0; col < cols; col++) {
+    for (let row = 0; row < rows; row++) {
+      let x = tileSize * (col + 0.5 * (row % 2 + 0.5)),
+          y = row * tileSize / 2,
+          delta = Math.floor(tileSize / 2);
+      let colorData = colormap.getColor(x + delta,y + delta);
+      let c = colorData;
+      let colorname = nameThisColor(`rgb(${c[0]}, ${c[1]}, ${c[2]})`)[0]
+      if (! colorMap[colorname.name]) {
+        console.error('No colorMap key for', colorname.name);
+      }
+      tiles.push({
+        col: col,
+        row: row,
+        x: x,
+        y: y,
+        tileSize: tileSize,
+        colorData: colorData,
+        colorname: colorMap[colorname.name],
+        mosaic: mosaic
+      })
+    }
+  }
+  return tiles;
+}
+
 function drawTile(tile) {
   let node = document.createElement('div');
   node.classList.add('node');
@@ -68,13 +107,24 @@ function drawTile(tile) {
     node.appendChild(mask);
   }
   var img = document.createElement('img');
-  img.src = '/assets/crowd-small.png'
+  img.src = '/assets/crowd-small.png';
   img.style.width = tile.tileSize + 'px';
   node.style.left = tile.x + 'px';
   node.style.top = tile.y + 'px';
   node.dataset.tile = JSON.stringify(tile);
   node.appendChild(img);
   img.onload = ev => tile.mosaic.appendChild(node);
+}
+
+function drawDiamond(tile) {
+  var img = document.createElement('img');
+  img.classList.add('node');
+  img.src = `/assets/crowd-${tile.colorname}-small-diamond.png`;
+  img.style.width = tile.tileSize + 'px';
+  img.style.left = tile.x + 'px';
+  img.style.top = tile.y + 'px';
+  img.dataset.tile = JSON.stringify(tile);
+  img.onload = ev => tile.mosaic.appendChild(img);
 }
 
 function animateTiles(tiles) {
@@ -90,5 +140,7 @@ function animateTiles(tiles) {
 
 module.exports = {
   init: init,
-  drawTile: drawTile
+  drawTile: drawTile,
+  drawDiamond: drawDiamond,
+  generateDiamondTiles: generateDiamondTiles
 }

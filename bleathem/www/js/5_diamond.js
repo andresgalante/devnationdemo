@@ -3,34 +3,29 @@
 var colormap = require('./modules/colormap'),
     mosaic = require('./modules/mosaic'),
     falling = require('./modules/falling'),
+    canvas = require('./modules/canvas'),
     Rx = require('rx');
 
-var target = document.getElementById('target');
-var context = target.getContext('2d');
-
-/* Step 1: initialize the canvas, colormap */
 colormap.init('1600')
-  .then(rect => {
-    /* Step 2: initialize a new target canvas */
-    document.body.style['min-width'] = '1700px';
-    target.setAttribute('width', rect.width);
-    target.setAttribute('height', rect.height);
-    target.style.left = rect.left;
-    target.style.top = rect.top;
-    return rect;
-  })
-  /* Step 4: initialize the img container */
+  .then(canvas.init)
+  /* Step 2: initialize the img container (squares or diamonds) */
   .then(mosaic.init)
-  /* Step 5: animate the tiles */
+  // .then(mosaic.generateDiamondTiles)
   .then(tiles => {
+    /* Step 1: Use the clip path to get diamonds */
+    // document.querySelector('.mosaic').classList.add('clip')
+
+    /* Step 4: animate with pre-colored images */
     falling.animate(tiles)
     .subscribe(tile => mosaic.drawTile(tile))
+    // falling.animate(tiles)
+    // .subscribe(tile => mosaic.drawDiamond(tile))
+
   })
   .catch(function(err) {
     console.error(err.stack);
   })
 
-/* Step 6: Introduce a animation event listener */
 document.querySelector('.mosaic').addEventListener('animationend', event => {
   var node = event.target;
   // ignore non-node events
@@ -41,13 +36,13 @@ document.querySelector('.mosaic').addEventListener('animationend', event => {
   let tile = JSON.parse(node.dataset.tile);
   // Load an image with an already-colored image
   var img = new Image();
+  /* Step 3: place diamond shapes in the canvas */
   img.src = `/assets/crowd-${tile.colorname}-small.png`;
+  // img.src = `/assets/crowd-${tile.colorname}-small-diamond.png`;
   img.onload = () => {
     // render the image to the new canvas
-    context.drawImage(img, tile.x, tile.y, 18, 18);
+    canvas.drawImage(img, tile.x, tile.y, 18, 18);
     // remove the animated element
     node.parentElement.removeChild(node);
   }
 })
-
-/* Step 7: Show FPS, see how disabling the .mask animation helps */

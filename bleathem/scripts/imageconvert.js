@@ -25,12 +25,24 @@ var matrix = {
 
 function writeAndConvertImage(sourceStream, targetpath, filename) {
   var promises = [];
-  var imageStream = gm(sourceStream).setFormat('png').resize(18).stream();
-  promises.push(writeFile(imageStream, targetpath, `${filename}-small.png`));
-  // var cropStream = crop(sourceStream);
-  for (var color in matrix) {
-    var colorStream = recolor(imageStream, matrix[color]);
-    promises.push(writeFile(colorStream, targetpath, `${filename}-${color}.png`));
+  var imageStream = gm(sourceStream).setFormat('png').resize(75).stream();
+  promises.push(writeFile(imageStream, targetpath, `${filename}-mid.png`));
+  var cropStream = crop(imageStream);
+  for (let color in matrix) {
+    let colorStream = recolor(cropStream, matrix[color]);
+    promises.push(writeFile(colorStream, targetpath, `${filename}-${color}-mid-diamond.png`));
+  }
+  var smallStream = resize(imageStream, 18);
+  promises.push(writeFile(smallStream, targetpath, `${filename}-small.png`));
+  for (let color in matrix) {
+    let colorStream = recolor(smallStream, matrix[color]);
+    promises.push(writeFile(colorStream, targetpath, `${filename}-${color}-small.png`));
+  }
+  var smallCropStream = resize(cropStream, 18);
+  promises.push(writeFile(smallCropStream, targetpath, `${filename}-small-diamond.png`));
+  for (let color in matrix) {
+    let colorStream = recolor(smallCropStream, matrix[color]);
+    promises.push(writeFile(colorStream, targetpath, `${filename}-${color}-small-diamond.png`));
   }
   return q.all(promises);
 }
@@ -46,7 +58,7 @@ function recolor(stream, matrix) {
 function crop(stream) {
   return gm(stream)
   .command('composite')
-  .out('client/assets/mask.png')
+  .out('www/assets/mask.png')
   .out('-compose', 'in')
   .stream();
 }

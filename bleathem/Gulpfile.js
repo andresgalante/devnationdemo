@@ -57,6 +57,7 @@ addModule('1_colormap');
 addModule('2_mosaic');
 addModule('3_falling');
 addModule('4_canvas');
+addModule('5_diamond');
 
 // On updates recompile
 modules.forEach(function(module) {

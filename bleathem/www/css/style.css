@@ -33,8 +33,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 18px;
+  height: 18px;
   mix-blend-mode: color; }
 
 .node-white img {
@@ -54,3 +54,10 @@
     display: table-cell;
     vertical-align: middle;
     padding: 15px; }
+
+.clip .mask, .clip img {
+  -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+          clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+
+.hidden {
+  visibility: hidden; }
