@@ -19,9 +19,9 @@ colormap.init('1600')
     target.style.top = rect.top;
     return rect;
   })
-  /* Step 4: initialize the img container */
+  /* Step 3: initialize the img container */
   .then(mosaic.init)
-  /* Step 5: animate the tiles */
+  /* Step 4: animate the tiles */
   .then(tiles => {
     falling.animate(tiles)
     .subscribe(tile => mosaic.drawTile(tile))
@@ -30,7 +30,7 @@ colormap.init('1600')
     console.error(err.stack);
   })
 
-/* Step 6: Introduce a animation event listener */
+/* Step 5: Introduce a animation event listener */
 document.querySelector('.mosaic').addEventListener('animationend', event => {
   var node = event.target;
   // ignore non-node events
@@ -43,9 +43,9 @@ document.querySelector('.mosaic').addEventListener('animationend', event => {
   var img = new Image();
   img.src = `/assets/tile/square/small/${tile.colorname}/${tile.filename}.png`;
   img.onload = () => {
-    /* Step 7: Draw the image on the canvas */
+    /* Step 6: Draw the image on the canvas */
     // context.drawImage(img, tile.x, tile.y, 18, 18);
-    /* Step 8: Remove the animated element */
+    /* Step 7: Remove the animated element */
     // node.parentElement.removeChild(node);
   }
 })
