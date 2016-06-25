@@ -21,6 +21,8 @@ var colorMap = {
   'chestnut': 'orange'
 }
 
+var filenames = ['crowd', 'summit-1', 'summit-2', 'summit-3', 'summit-4', 'summit-5', 'summit-6'];
+
 function init(rect) {
   let mosaic = document.querySelector('.mosaic');
   mosaic.style.width = rect.width + 'px';
@@ -50,7 +52,8 @@ function init(rect) {
         tileSize: tileSize,
         colorData: colorData,
         colorname: colorMap[colorname.name],
-        mosaic: mosaic
+        mosaic: mosaic,
+        filename: filenames[(Math.floor(Math.random()*filenames.length))]
       })
     }
   }
@@ -87,7 +90,8 @@ function generateDiamondTiles(rect) {
         tileSize: tileSize,
         colorData: colorData,
         colorname: colorMap[colorname.name],
-        mosaic: mosaic
+        mosaic: mosaic,
+        filename: filenames[(Math.floor(Math.random()*filenames.length))]
       })
     }
   }
@@ -107,7 +111,7 @@ function drawTile(tile) {
     node.appendChild(mask);
   }
   var img = document.createElement('img');
-  img.src = '/assets/tile/square/mid/crowd.png'
+  img.src = `/assets/tile/square/mid/${tile.filename}.png`
   img.style.width = tile.tileSize + 'px';
   node.style.left = tile.x + 'px';
   node.style.top = tile.y + 'px';
@@ -119,7 +123,7 @@ function drawTile(tile) {
 function drawDiamond(tile) {
   var img = document.createElement('img');
   img.classList.add('node');
-  img.src = `/assets/tile/diamond/small/${tile.colorname}/crowd.png`;
+  img.src = `/assets/tile/diamond/small/${tile.colorname}/${tile.filename}.png`;
   img.style.width = tile.tileSize + 'px';
   img.style.left = tile.x + 'px';
   img.style.top = tile.y + 'px';

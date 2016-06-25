@@ -81,7 +81,9 @@ function writeFile(stream, filepath) {
   return deferred.promise;
 }
 
-var filename = 'crowd.jpg';
-var filepath = path.join('www', 'assets', 'tile', 'original', filename);
-var stream = fs.createReadStream(filepath);
-writeAndConvertImage(stream, 'crowd.png');
+var filenames = ['crowd', 'summit-1', 'summit-2', 'summit-3', 'summit-4', 'summit-5', 'summit-6'];
+filenames.forEach(function(filename) {
+  var filepath = path.join('www', 'assets', 'tile', 'original', `${filename}.jpg`);
+  var stream = fs.createReadStream(filepath);
+  writeAndConvertImage(stream, `${filename}.png`);
+})

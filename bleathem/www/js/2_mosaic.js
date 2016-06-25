@@ -10,8 +10,9 @@ colormap.init('1600').
     // let mosaic = document.querySelector('.mosaic');
     // resizeMosaic(mosaic, rect);
 
-    /* Step 3: break the img container up into a grid of "tiles" */
+    /* Step 3: generate a list of tiles to cover the img container */
     // let tiles = generateTileList(mosaic, rect);
+    // console.log(tiles[0])
 
     /* Step 4: draw each tile into the grid */
     // tiles.forEach(function(tile) {
@@ -39,7 +40,9 @@ function drawTile(tile) {
   }
   // create an image element
   var img = document.createElement('img');
+  /* Step 5: use more than 1 image */
   img.src = '/assets/tile/square/mid/crowd.png'
+  // img.src = `/assets/tile/square/mid/${tile.filename}.png`
   // position the image element
   img.style.width = tile.tileSize + 'px';
   node.style.left = tile.x + 'px';
@@ -62,6 +65,7 @@ function generateTileList(mosaic, rect) {
   let tileSize = 18;
   let cols = Math.ceil(rect.width / tileSize),
       rows = Math.ceil(rect.height / tileSize);
+  let filenames = ['crowd', 'summit-1', 'summit-2', 'summit-3', 'summit-4', 'summit-5', 'summit-6'];
   for (let col = 0; col < cols; col++) {
     for (let row = 0; row < rows; row++) {
       let x = col * tileSize,
@@ -75,7 +79,8 @@ function generateTileList(mosaic, rect) {
         y: y,
         tileSize: tileSize,
         colorData: colorData,
-        mosaic: mosaic
+        mosaic: mosaic,
+        filename: filenames[(Math.floor(Math.random()*filenames.length))]
       })
     }
   }
