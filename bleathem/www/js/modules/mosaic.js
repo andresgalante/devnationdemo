@@ -107,7 +107,7 @@ function drawTile(tile) {
     node.appendChild(mask);
   }
   var img = document.createElement('img');
-  img.src = '/assets/crowd-small.png';
+  img.src = '/assets/tile/square/mid/crowd.png'
   img.style.width = tile.tileSize + 'px';
   node.style.left = tile.x + 'px';
   node.style.top = tile.y + 'px';
@@ -119,7 +119,7 @@ function drawTile(tile) {
 function drawDiamond(tile) {
   var img = document.createElement('img');
   img.classList.add('node');
-  img.src = `/assets/crowd-${tile.colorname}-small-diamond.png`;
+  img.src = `/assets/tile/diamond/small/${tile.colorname}/crowd.png`;
   img.style.width = tile.tileSize + 'px';
   img.style.left = tile.x + 'px';
   img.style.top = tile.y + 'px';

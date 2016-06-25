@@ -37,8 +37,8 @@ document.querySelector('.mosaic').addEventListener('animationend', event => {
   // Load an image with an already-colored image
   var img = new Image();
   /* Step 2: place diamond shapes in the canvas */
-  img.src = `/assets/crowd-${tile.colorname}-small.png`;
-  // img.src = `/assets/crowd-${tile.colorname}-small-diamond.png`;
+  img.src = `/assets/tile/square/small/${tile.colorname}/crowd.png`;
+  // img.src = `/assets/tile/diamond/small/${tile.colorname}/crowd.png`;
   img.onload = () => {
     // render the image to the new canvas
     canvas.drawImage(img, tile.x, tile.y, 18, 18);

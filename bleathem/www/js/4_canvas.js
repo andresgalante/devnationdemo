@@ -41,7 +41,7 @@ document.querySelector('.mosaic').addEventListener('animationend', event => {
   let tile = JSON.parse(node.dataset.tile);
   // Load an image with an already-colored image
   var img = new Image();
-  img.src = `/assets/crowd-${tile.colorname}-small.png`;
+  img.src = `/assets/tile/square/small/${tile.colorname}/crowd.png`;
   img.onload = () => {
     /* Step 7: Draw the image on the canvas */
     // context.drawImage(img, tile.x, tile.y, 18, 18);

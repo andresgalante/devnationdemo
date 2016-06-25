@@ -39,7 +39,7 @@ function drawTile(tile) {
   }
   // create an image element
   var img = document.createElement('img');
-  img.src = '/assets/crowd-small.png'
+  img.src = '/assets/tile/square/mid/crowd.png'
   // position the image element
   img.style.width = tile.tileSize + 'px';
   node.style.left = tile.x + 'px';
