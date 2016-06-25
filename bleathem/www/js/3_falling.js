@@ -10,14 +10,16 @@ colormap.init('1600')
   /* Step 2: initialize the img container */
   .then(mosaic.init)
   .then(tiles => {
-    /* Step 4: Animate the tiles */
-    // document.querySelector('.mosaic').classList.add('animate-node')
-    // document.querySelector('.mosaic').classList.add('animate-mask')
-
     /* Step 3: Draw the tiles all at once */
     // tiles.forEach(function(tile) {
     //   mosaic.drawTile(tile);
     // })
+
+    /* Step 4: Animate the tiles */
+    // document.querySelector('.mosaic').classList.add('animate-node')
+    // document.querySelector('.mosaic').classList.add('animate-mask')
+
+    /* Note: Comment Step 3 */
 
     /* Step 5: Animate the tiles one at a time */
     // Rx.Observable.zip(
