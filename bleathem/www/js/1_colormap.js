@@ -13,11 +13,13 @@ image.src = '/assets/devnation.svg';
 image.onload = event => {
   /* Step 2: draw the image into a canvas */
   // context.drawImage(image, 0, 0, canvas.width, canvas.height)
+  /* Note: Comment-out the above */
 
   /* Step 3: set the canvas size */
   // canvas.width = 1100;
   // canvas.height = 500;
   // context.drawImage(image, 0, 0, canvas.width, canvas.height)
+  /* Note: Comment-out the above */
 
   /* Step 4: preserve the aspect ratio */
   // canvas.width = 1100;
@@ -51,7 +53,7 @@ canvas.addEventListener('mousemove', event => {
   let colorString = `rgba(${r}, ${g}, ${b}, ${a})`
   previewColor(colorString);
 
-  previewMask(r,g,b,a);
+  // previewMask(r,g,b,a);
 });
 
 
