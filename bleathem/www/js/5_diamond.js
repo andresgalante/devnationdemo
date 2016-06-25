@@ -8,7 +8,7 @@ var colormap = require('./modules/colormap'),
 
 colormap.init('1600')
   .then(canvas.init)
-  /* Step 2: initialize the img container (squares or diamonds) */
+  /* Step 3: initialize the img container (squares or diamonds) */
   .then(mosaic.init)
   // .then(mosaic.generateDiamondTiles)
   .then(tiles => {
@@ -36,7 +36,7 @@ document.querySelector('.mosaic').addEventListener('animationend', event => {
   let tile = JSON.parse(node.dataset.tile);
   // Load an image with an already-colored image
   var img = new Image();
-  /* Step 3: place diamond shapes in the canvas */
+  /* Step 2: place diamond shapes in the canvas */
   img.src = `/assets/crowd-${tile.colorname}-small.png`;
   // img.src = `/assets/crowd-${tile.colorname}-small-diamond.png`;
   img.onload = () => {

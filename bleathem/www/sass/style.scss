@@ -14,6 +14,11 @@
     height: 168px;
     border: solid black 1px;
   }
+
+  .mask {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .border {
@@ -43,8 +48,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 18px;
+  height: 18px;
   mix-blend-mode: color;
 }
 
