@@ -6,22 +6,22 @@ var fs = require('fs'),
     gm = require('gm').subClass({imageMagick: true}),
     q = require('q');
 
+function orangeMatrix(r, g, b, s, d) {
+  return `6x3: ${r*s}    0     0    0    0    ${d} \
+                 0   ${g*s}    0    0    0    ${d} \
+                 0     0   ${b*s}   0    0    ${d} `
+}
+function blueMatrix(r, g, b, s, d) {
+  return `6x3: 0         ${g*s}      ${b*s}    0    0    ${d} \
+               ${r*s}    0         ${b*s}    0    0    ${d} \
+               ${r*s}    ${g*s}    ${b*s}    0    0  ${d} `
+}
 var matrix = {
-      orange:'.94   0     0     0     0 \
-              0     .36   0     0     0 \
-              0     0     .29   0     0 \
-              0     0     0     1     0 \
-              0     0     0     0     1',
-      white: '5     0     0     0     0 \
-              0     5     0     0     0 \
-              0     0     5     0     0 \
-              0     0     0     1     0 \
-              0     0     0     0     1',
-      blue:  '.3   0     0     0     0 \
-              0     .3   0     0     0 \
-              0     0     .6   0     0 \
-              0     0     0     1     0 \
-              0     0     0     0     1',
+      orange: orangeMatrix(241, 94, 75, 1/200, 0.1),
+      blue: blueMatrix(25, 25, 48, 1/100, 0.15),
+      white: '6x3: .2    .5    .3    0    0   .45 \
+                   .2    .5    .3    0    0   .45 \
+                   .2    .5    .3    0    0   .45 ',
     }
 
 function writeAndConvertImage(sourceStream, filename) {

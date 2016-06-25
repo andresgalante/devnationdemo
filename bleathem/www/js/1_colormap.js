@@ -19,6 +19,7 @@ image.onload = event => {
   // canvas.width = 1100;
   // canvas.height = 500;
   // context.drawImage(image, 0, 0, canvas.width, canvas.height)
+
   /* Note: Comment-out the above */
 
   /* Step 4: preserve the aspect ratio */
