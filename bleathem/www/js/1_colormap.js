@@ -52,7 +52,7 @@ canvas.addEventListener('mousemove', event => {
 
   /* Step 8: Display the rgb values as a CSS rgba color */
   let colorString = `rgba(${r}, ${g}, ${b}, ${a})`
-  previewColor(colorString);
+  // previewColor(colorString);
 
   // previewMask(r,g,b,a);
 });
