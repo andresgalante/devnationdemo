@@ -75,9 +75,9 @@ function previewMask(r,g,b,a) {
   let colorString = `rgba(${r}, ${g}, ${b}, ${a})`
   mask.style.background = colorString;
 
-  if (r == 0 && g == 0 && b == 0) {
-    mask.parentElement.classList.add('node-white');
-  } else {
-    mask.parentElement.classList.remove('node-white');
-  }
+  // if (r == 0 && g == 0 && b == 0) {
+  //   mask.parentElement.classList.add('node-white');
+  // } else {
+  //   mask.parentElement.classList.remove('node-white');
+  // }
 }
