@@ -20,7 +20,3 @@ img {
   z-index: 1;
   top: 200px;
   left: 200px; }
-
-img {
-  -webkit-filter: grayscale(1) contrast(0.7) brightness(2);
-          filter: grayscale(1) contrast(0.7) brightness(2); }
