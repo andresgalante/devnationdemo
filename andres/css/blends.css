@@ -28,6 +28,11 @@ img {
   /* Comparative modes =================== */
   /* Composite modes =================== */ }
 
+img.paper {
+  mix-blend-mode: screen;
+  -webkit-filter: brightness(1.3) invert(1);
+          filter: brightness(1.3) invert(1); }
+
 .node {
   display: inline-block;
   position: relative;
@@ -38,8 +43,15 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  mix-blend-mode: color; }
 
 .node-white img {
   -webkit-filter: grayscale(1) contrast(0.6) brightness(2);
           filter: grayscale(1) contrast(0.6) brightness(2); }
+
+.node-orange .mask {
+  background: #f15e4b; }
+
+.node-blue .mask {
+  background: #191930; }

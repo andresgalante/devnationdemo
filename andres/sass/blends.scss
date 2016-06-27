@@ -1,40 +1,41 @@
 @import "base";
 
-
 .blendmode img:first-of-type{
 /* Darken modes =================== */
-//  mix-blend-mode: multiply;
+// mix-blend-mode: multiply;
 //  mix-blend-mode: darken;
 //  mix-blend-mode: color-burn;
 
 /* Lightning modes =================== */
-//  mix-blend-mode: screen;
+ // mix-blend-mode: screen;
 //  mix-blend-mode: lighten;
 //  mix-blend-mode: color-dodge;
 
 /* Contrast modes =================== */
-//  mix-blend-mode: overlay;
+ // mix-blend-mode: overlay;
 //  mix-blend-mode: soft-light;
 //  mix-blend-mode: hard-light;
 
 /* Comparative modes =================== */
-//  mix-blend-mode: difference;
+ // mix-blend-mode: difference;
 //  mix-blend-mode: exclusion;
 
 /* Composite modes =================== */
 //  mix-blend-mode: hue;
 //  mix-blend-mode: saturation;
 //  mix-blend-mode: luminosity;
-//  mix-blend-mode: color;
+// mix-blend-mode: color;
 }
 
 // Paper =====================
 
 body{
-//  background: red;
+ // background: red;
 }
 
 img.paper{
+  mix-blend-mode: screen;
+  filter: brightness(1.3) invert(1);
 }
 
 // Nodes =====================
@@ -51,6 +52,8 @@ img.paper{
   left: 0;
   width: 100%;
   height: 100%;
+  mix-blend-mode: color;
+  // background: blue;
 }
 
 .node-white img{
@@ -58,9 +61,9 @@ img.paper{
 }
 
 .node-orange .mask{
-// background: rgba(241, 94, 75, 1);
+   background: rgba(241, 94, 75, 1);
 }
 
 .node-blue .mask{
-// background: rgba(25, 25, 48, 1);
+   background: rgba(25, 25, 48, 1);
 }

@@ -20,3 +20,9 @@ img {
   z-index: 1;
   top: 200px;
   left: 200px; }
+
+img {
+  -webkit-filter: contrast(0.8) saturate(0.9) sepia(0.4);
+          filter: contrast(0.8) saturate(0.9) sepia(0.4);
+  -webkit-filter: grayscale(1) contrast(0.7) brightness(2);
+          filter: grayscale(1) contrast(0.7) brightness(2); }

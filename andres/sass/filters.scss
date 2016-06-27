@@ -1,18 +1,24 @@
 @import "base";
 
 img{
+  // background: red;
 // filter: blur(4vh);
-// filter: brightness(6);
-// filter: contrast(900%);
-// filter: saturate(5);
+// filter: brightness(.6);
+// filter: contrast(50%);
+ // filter: saturate(17);
 // filter: grayscale(1);
 // filter: sepia(100%);
+// box-shadow: 0 0 20px blue;
 // filter: drop-shadow(16px 16px 20px blue);
-// filter: hue-rotate(190deg);
+// filter: hue-rotate(30deg);
 // filter: invert(1);
-// filter: opacity(.5); opacity: .5;
+// filter: opacity(.5);
+// opacity: .5
 
 // OLD
-// filter: contrast(.8) saturate(.9) sepia(.4);
+filter: contrast(.8) saturate(.9) sepia(.4);
+
+filter: grayscale(1) contrast(.7) brightness(2);
+
 
 }

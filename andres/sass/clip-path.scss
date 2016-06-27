@@ -1,8 +1,10 @@
 @import "base";
 
 body{
-//  background: red;
+  background: red;
 }
 
 img{
+  // clip-path: circle(130px at 40px 50px);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%)
 }

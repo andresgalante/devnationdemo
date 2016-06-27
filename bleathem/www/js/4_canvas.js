@@ -44,13 +44,13 @@ document.querySelector('.mosaic').addEventListener('animationend', event => {
   img.src = `/assets/tile/square/small/${tile.colorname}/${tile.filename}.png`;
   img.onload = () => {
     /* Step 6: Draw the image on the canvas */
-    // context.drawImage(img, tile.x, tile.y, 18, 18);
+    context.drawImage(img, tile.x, tile.y, 18, 18);
     /* Step 7: Remove the animated element */
-    // node.parentElement.removeChild(node);
+    node.parentElement.removeChild(node);
   }
 })
 
 /* Step 7: Show FPS */
 
 /* Step 8: Disable the .mask animation */
-// document.querySelector('.mosaic').classList.remove('animate-mask')
+document.querySelector('.mosaic').classList.remove('animate-mask')

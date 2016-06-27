@@ -7,17 +7,17 @@ var _ = require('lodash'),
 colormap.init('1600').
   then(rect => {
     /* Step 2: resize the div img container */
-    // let mosaic = document.querySelector('.mosaic');
-    // resizeMosaic(mosaic, rect);
+    let mosaic = document.querySelector('.mosaic');
+    resizeMosaic(mosaic, rect);
 
     /* Step 3: generate a list of tiles to cover the img container */
-    // let tiles = generateTileList(mosaic, rect);
+    let tiles = generateTileList(mosaic, rect);
     // console.log(tiles[0])
 
     /* Step 4: draw each tile into the grid */
-    // tiles.forEach(function(tile) {
-    //   drawTile(tile);
-    // })
+    tiles.forEach(function(tile) {
+      drawTile(tile);
+    })
   })
   .catch(function(err) {
     console.error(err.stack);
@@ -41,8 +41,8 @@ function drawTile(tile) {
   // create an image element
   var img = document.createElement('img');
   /* Step 5: use more than 1 image */
-  img.src = '/assets/tile/square/mid/crowd.png'
-  // img.src = `/assets/tile/square/mid/${tile.filename}.png`
+  // img.src = '/assets/tile/square/mid/crowd.png'
+  img.src = `/assets/tile/square/mid/${tile.filename}.png`
   // position the image element
   img.style.width = tile.tileSize + 'px';
   node.style.left = tile.x + 'px';
